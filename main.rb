@@ -27,7 +27,7 @@ class GalagaInvaders
   end
 
   def show
-    while (true) do
+    while true do
       update
       draw
       key_pressed(gets.chomp) # Simulating a key interrupt.
@@ -40,10 +40,10 @@ class GalagaInvaders
     elsif key == 'd'
       ship.move_right
     elsif key == ' '
-      ship.fire(missiles)
+      missiles.launch_for(ship)
     end
     if key == 'p'
-      alien.fire(missiles)
+      missiles.launch_for(alien)
     end
   end
 
@@ -55,8 +55,16 @@ GalagaInvaders.new.show
 Reflecting on Principle
 -----------------------
 1. True or False: Good OO design eliminates dependencies.
+  False.
 2. Briefly list four ways in which a class that collaborates with another class
    is dependent on it. (For example, one dependency is knowing the other class name.)
+   1. Knowing the class name
+   2. The name of a message that it intends to send
+   3. The arguments that it requires
+   4. The order of the arguments.
 3. What are two primary factors to consider when assessing the risk of a dependency?
+  Number of dependencies, and the volatility of the dependencies. 
 4. What is Metz's rule of thumb for choosing a dependency direction?
+  Depend on the class that is less likely to change.
 =end
+

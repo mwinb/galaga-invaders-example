@@ -23,10 +23,21 @@ class Alien
     "👾 (#{x}, #{y})"
   end
 
-  def fire(missiles)
-    missile = Missile.new(x, bottom_edge)
-    missile.launch(10)
-    missiles.add(missile)
+
+  def ordinance_velocity
+    10
+  end
+
+  def muzzle_location
+    Vector.new(x, bottom_edge)
+  end
+
+  def launch_code
+    {
+      x: muzzle_location.x,
+      y: muzzle_location.y,
+      velocity: ordinance_velocity
+    }
   end
 
   def bottom_edge
@@ -34,3 +45,5 @@ class Alien
   end
 
 end
+
+Vector = Struct.new(:x, :y)
