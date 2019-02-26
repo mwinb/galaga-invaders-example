@@ -6,6 +6,7 @@ class Ship
   WIDTH = 100
   HEIGHT = 100
   DEFAULT_VELOCITY = 5
+  DEFAULT_FIRING_VELOCITY = -10;
 
   attr_accessor :location
 
@@ -15,6 +16,10 @@ class Ship
 
   def muzzle_location
     Vector.new(location.x, top_edge)
+  end
+
+  def firing_velocity
+    DEFAULT_FIRING_VELOCITY
   end
 
   def move_left

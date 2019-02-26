@@ -57,8 +57,13 @@ GalagaInvaders.new.show
 Reflecting on Principle
 -----------------------
 1. What is "duck typing" and what does it have to do with polymorphism?
+  Duck typing is using the behavior of a class instead of the class itself as a type.
+  This involves polymorphism because it allows multiple types to be used based on the behavior
+  and the methods it contains.
 2. What are some common code smells that indicate the need for relying on a
    "duck type" rather than a concrete class?
+   Switch statements for type checking. Type checking. is_a?, kind_of?, and responds_to? statements.
 3. True or False: Abstractions like duck typing make code explicitly easier to
    understand, vs. using concrete types.
+   False.
 =end
